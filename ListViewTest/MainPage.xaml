@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ListViewTest.MainPage" Loaded="ContentPage_Loaded">
+
+    <StackLayout>
+        <!--<VerticalStackLayout>-->
+        <ListView x:Name="gescandItems" BackgroundColor="#3C4D53" HeightRequest="450" SelectionMode="Single" ItemSelected="gescandItems_ItemSelected" >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <!--<Grid BackgroundColor="#352C2C">-->
+                        <Grid x:Name="grid">
+                            <!--<Grid.Triggers>
+                             <DataTrigger TargetType="Grid" Binding="{Binding Source={x:Reference grid},
+                                    Path=BindingContext. .IsSelected}" Value="False">
+                                 <Setter Property="BackgroundColor" Value="Purple" />
+                             </DataTrigger>
+                             <DataTrigger TargetType="Grid" Binding="{Binding Source={x:Reference grid},
+                                    Path=BindingContext.IsSelected}" Value="True">
+                                 <Setter Property="BackgroundColor" Value="SlateBlue" />
+                             </DataTrigger>
+                         </Grid.Triggers>-->
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="40" />
+                                <ColumnDefinition Width="300" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="20" />
+                                <RowDefinition Height="20" />
+                            </Grid.RowDefinitions>
+                            <Label Grid.Column="0" Text="{Binding Aantal}" TextColor="White" Grid.RowSpan="2" Margin="10,5,0,5" HorizontalTextAlignment="Center" VerticalOptions="CenterAndExpand" BackgroundColor="Black" />
+
+                            <Label Grid.Row="0" Grid.Column="1" Text="{Binding ArtikelId}" Margin="10,0,0,0" Padding="0" TextColor="DeepSkyBlue" />
+                            <Label Grid.Row="1" Grid.Column="1" Text="{Binding ArtikelName}" Margin="10,0,0,0" Padding="0" />
+
+                            <!--<Grid.GestureRecognizers>
+                                 <TapGestureRecognizer NumberOfTapsRequired="2" Tapped="TapGestureRecognizer_Tapped"/>
+                             </Grid.GestureRecognizers>-->
+
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <HorizontalStackLayout Spacing="0" Padding="0" HorizontalOptions="FillAndExpand" BackgroundColor="DarkSlateGray">
+            <Button x:Name="RemoveButton" Text="REMOVE" BackgroundColor="#F5351B"
+             Clicked="RemoveButton_Clicked"
+             HorizontalOptions="Center" CornerRadius="0" TextColor="#F8F7F7" FontSize="Small" FontAutoScalingEnabled="True" VerticalOptions="Start" Padding="8,0,8,0"/>
+        </HorizontalStackLayout>
+    </StackLayout>
+
+</ContentPage>

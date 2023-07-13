@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <color name="colorPrimary">#FFF</color>
+  <color name="colorPrimaryDark">#2B0B98</color>
+  <color name="colorAccent">#2B0B98</color>
+
+  <color name="ListViewSelected">#96BCE3</color>
+  <color name="ListViewHighlighted">#E39696</color>
+
+  <style name="test">
+    <item name="android:colorActivatedHighlight">#2B0B98</item>
+  </style>
+</resources>
